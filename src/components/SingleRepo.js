@@ -1,16 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import moment from "moment";
 import { FaRocket } from "react-icons/fa";
 const SingleRepo = ({ repo }) => {
+  const lastUpdateDate = moment(repo.updated_at).fromNow();
+
   return (
     <RepoStyled>
       <h1> {repo.name}</h1>
       <p>{repo.description}</p>
       <div className="tags">
         <div>
-          <FaRocket /> {repo.language}
+          {repo.language && <FaRocket />} {repo.language}
         </div>
-        {/* Months ago */}
+        <div>{lastUpdateDate}</div>
         <div>{repo.license && repo.license.name}</div>
       </div>
     </RepoStyled>

@@ -87,7 +87,7 @@ const RepoComponent = () => {
         <button>New</button>
       </SearchFilter>
       {repos.map((repo) => (
-        <SingleRepo repo={repo} />
+        <SingleRepo repo={repo} key={repo.id} />
       ))}
     </div>
   );
