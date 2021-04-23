@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import ProfileInfo from "./components/ProfileInfo";
+import RepoComponent from "./components/RepoComponent";
+import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <StyledProfileIndo>
+          <ProfileInfo />
+        </StyledProfileIndo>
+        <StyledRepoComponent>
+          <RepoComponent />
+        </StyledRepoComponent>
+      </Container>
     </div>
   );
 }
+
+const Container = styled.div`
+  padding: 0rem 7rem 0rem 7rem;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0rem 2rem 0rem 2rem;
+  }
+`;
+
+const StyledProfileIndo = styled.div`
+  flex: 1;
+  width: 30%;
+  padding: 2rem;
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+    padding: 1rem 0rem 1rem 0rem;
+  }
+`;
+
+const StyledRepoComponent = styled.div`
+  flex: 3;
+  @media (max-width: 768px) {
+    flex: 1;
+  }
+`;
 
 export default App;
