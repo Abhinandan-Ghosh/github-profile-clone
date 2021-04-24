@@ -6,9 +6,10 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <StyledProfileIndo>
+        <StyledProfileInfo>
           <ProfileInfo />
-        </StyledProfileIndo>
+        </StyledProfileInfo>
+
         <StyledRepoComponent>
           <RepoComponent />
         </StyledRepoComponent>
@@ -27,7 +28,7 @@ const Container = styled.div`
   }
 `;
 
-const StyledProfileIndo = styled.div`
+const StyledProfileInfo = styled.div`
   flex: 1;
   width: 30%;
   padding: 2rem;

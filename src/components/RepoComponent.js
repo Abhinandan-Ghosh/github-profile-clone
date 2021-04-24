@@ -66,10 +66,11 @@ const RepoComponent = () => {
           <a href="/">Package</a>
         </div>
       </Nav>
+
       <SearchFilter>
         <input
           type="text"
-          placeholder="Search Repositories"
+          placeholder="  Search Repositories"
           value={search}
           onChange={onSearch}
         />
@@ -86,6 +87,7 @@ const RepoComponent = () => {
 
         <button>New</button>
       </SearchFilter>
+
       {repos.map((repo) => (
         <SingleRepo repo={repo} key={repo.id} />
       ))}
@@ -151,8 +153,24 @@ const SearchFilter = styled.div`
 
   input {
     width: 50%;
+    border: 1px solid;
+    border-color: #d6d6d6;
+    border-radius: 5px;
+    font-size: 1rem;
     @media (max-width: 768px) {
       width: 100%;
+    }
+  }
+  select {
+    width: 15%;
+    border-color: #d6d6d6;
+    border-radius: 5px;
+    font-size: 1rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    option {
+      height: 1rem;
     }
   }
 `;
