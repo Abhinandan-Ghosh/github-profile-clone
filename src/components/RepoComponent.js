@@ -76,7 +76,7 @@ const RepoComponent = () => {
         />
 
         <select>
-          <option value="">type</option>
+          <option value="">Type</option>
         </select>
         <select value={inpSelect} onChange={onSelect}>
           <option value="All">All</option>
