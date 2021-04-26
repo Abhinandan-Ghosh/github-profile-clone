@@ -12,19 +12,20 @@ const ProfileInfo = () => {
     });
   }, []);
   return (
-    <ImgBio>
+    <UserBio>
       <img src={userData.avatar_url} alt="" />
 
-      <div className="grp1">
+      <UserInfGrp1>
         <h2>{userData.name}</h2>
         <p>{userData.login}</p>
-      </div>
-      <div className="grp2">
+      </UserInfGrp1>
+
+      <UserInfGrp2>
         <p>{userData.bio}</p>
         <button>Edit Bio</button>
-      </div>
+      </UserInfGrp2>
 
-      <UserInf>
+      <UserInfGrp3>
         <p>
           <FaBuilding />
           {userData.company}
@@ -33,54 +34,47 @@ const ProfileInfo = () => {
           <FaMapMarkerAlt />
           {userData.location}
         </p>
-      </UserInf>
-    </ImgBio>
+      </UserInfGrp3>
+    </UserBio>
   );
 };
 
-const UserInf = styled.div`
+const UserBio = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 0rem 1rem 0rem;
-`;
-
-const ImgBio = styled.div`
-  display: flex;
-  flex-direction: column;
-  .grp1 {
-    padding: 1rem 0rem 1rem 0rem;
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  .grp2 {
-    p {
-      padding: 1rem 0rem 1rem 0rem;
-      font-size: 0.8rem;
-    }
-    button {
-      width: 90%;
-      padding: 0.3rem 0rem 0.3rem 0rem;
-    }
-  }
+  border-bottom: 0.1rem solid lightgray;
 
   img {
     border-radius: 5px;
   }
+`;
+
+const UserInfGrp1 = styled.div`
+  padding: 1rem 0rem 1rem 0rem;
+  p {
+    font-size: 1rem;
+  }
 
   @media (max-width: 768px) {
-    .grp1 {
-      padding: 1rem 0rem 1rem 0rem;
-    }
-
-    .grp2 {
-      p {
-        padding: 0.5rem 0rem 0.5rem 0rem;
-      }
-    }
-    border-bottom: 0.1rem solid lightgray;
+    padding: 1rem 0rem 1rem 0rem;
   }
+`;
+
+const UserInfGrp2 = styled.div`
+  p {
+    padding: 1rem 0rem 1rem 0rem;
+    font-size: 0.8rem;
+  }
+  button {
+    width: 90%;
+    padding: 0.3rem 0rem 0.3rem 0rem;
+  }
+`;
+
+const UserInfGrp3 = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem 1rem 0rem;
 `;
 
 export default ProfileInfo;

@@ -9,13 +9,13 @@ const SingleRepo = ({ repo }) => {
     <RepoStyled>
       <h1> {repo.name}</h1>
       <p>{repo.description}</p>
-      <div className="tags">
+      <Tags>
         <div>
           {repo.language && <FaRocket />} {repo.language}
         </div>
         <div>{lastUpdateDate}</div>
         <div>{repo.license && repo.license.name}</div>
-      </div>
+      </Tags>
     </RepoStyled>
   );
 };
@@ -26,12 +26,13 @@ const RepoStyled = styled.div`
   h1 {
     margin-bottom: 1rem;
   }
-  .tags {
-    display: flex;
-    padding: 0.7rem 0rem 0.7rem 0rem;
-    div {
-      margin-right: 1rem;
-    }
+`;
+
+const Tags = styled.div`
+  display: flex;
+  padding: 0.7rem 0rem 0.7rem 0rem;
+  div {
+    margin-right: 1rem;
   }
 `;
 
